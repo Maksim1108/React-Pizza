@@ -1,14 +1,19 @@
 import './index.scss';
 import Header from './components/header';
-import Hero from './components/hero';
-import Menu from './components/menu';
+import Cart from './pages/cart';
+import { Route } from 'react-router-dom';
+import Home from './pages/home';
+import React from 'react';
+import store from './redux/store';
 
 function App() {
+
   return (
     <div className='App'>
+     
       <Header />
-      <Hero />
-      <Menu />
+      <Route exact path='/' component={Home} />
+      <Route exact path='/cart' component={Cart} />
     </div>
   );
 }
