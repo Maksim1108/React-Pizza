@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import emptyCart from '../../assets/empty-cart.png';
 import CartItem from '../../components/cartItem';
 import { useSelector, useDispatch } from 'react-redux';
@@ -127,7 +128,7 @@ const Cart = () => {
                   </span>
                 </div>
                 <div class='cart__bottom-buttons'>
-                  <a href='/' class='button button--outline button--add go-back-btn'>
+                  <Link to='/' class='button button--outline button--add go-back-btn'>
                     <svg
                       width='8'
                       height='14'
@@ -144,7 +145,7 @@ const Cart = () => {
                     </svg>
 
                     <span>Вернуться назад</span>
-                  </a>
+                  </Link>
                   <div class='button pay-btn'>
                     <span>Оплатить сейчас</span>
                   </div>
@@ -164,9 +165,9 @@ const Cart = () => {
               Для того, чтобы заказать пиццу, перейди на главную страницу.
             </p>
             <img src={emptyCart} alt='Empty cart' />
-            <a href='/' class='button button--black'>
+            <Link to='/' class='button button--black'>
               <span>Вернуться назад</span>
-            </a>
+            </Link>
           </div>
         )}
       </div>

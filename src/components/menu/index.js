@@ -28,7 +28,6 @@ function Menu() {
 
   const handleSearchValue = (event) => {
     setSearchValue(event.target.value);
-    console.log(searchValue);
   };
 
   const handleAddPizzaToCart = (obj) => {
@@ -56,8 +55,8 @@ function Menu() {
   return (
     <section className='menu'>
       <div className='container'>
-        <label>
-          <input type='text' placeholder='Поиск пиццы' onChange={(e) => handleSearchValue(e)} />
+        <label className='pizzas__label'>
+          <input className='pizzas__search' type='text' placeholder='Поиск пиццы' onChange={(e) => handleSearchValue(e)} />
         </label>
         <div className='row menu__row'>
           <Filter />
@@ -83,75 +82,10 @@ function Menu() {
               })}
           </div>
         </div>
-        {/* <div className='pizzas'>
-          <h2 className='pizzas__title'>Закуски</h2>
-          <div className='row pizzas__row pt-35 ajara'>
-            {snacks
-              .filter((element) => {
-                if (searchValue === '') {
-                  return element;
-                } else if (element.name.toLowerCase().includes(searchValue.toLowerCase())) {
-                  return element;
-                }
-              })
-              .map((item) => {
-                if (seitek.categoryIndex === -1) {
-                  return <Pizzas {...item} key={item.id} />;
-                } else if (item.category === seitek.categoryIndex) {
-                  return <Pizzas {...item} key={item.id} />;
-                }
-              })}
-          </div>
-        </div>
-        <div className='pizzas'>
-          <h2 className='pizzas__title'>Десерты</h2>
-          <div className='row pizzas__row pt-35 ajara'>
-            {desserts
-              .filter((element) => {
-                if (searchValue === '') {
-                  return element;
-                } else if (element.name.toLowerCase().includes(searchValue.toLowerCase())) {
-                  return element;
-                }
-              })
-              .map((item) => {
-                if (seitek.categoryIndex === -1) {
-                  return <Pizzas {...item} key={item.id} />;
-                } else if (item.category === seitek.categoryIndex) {
-                  return <Pizzas {...item} key={item.id} />;
-                }
-              })}
-          </div>
-        </div> */}
       </div>
     </section>
   );
 }
 
 export default connect()(Menu);
-
-//  {.map((item) => {
-//                 return <Pizzas {...item} key={item.id} />;
-//               })}
-
-// const arr = [
-//   {
-//     price: 100,
-//   },
-//   {
-//     price: 200,
-//   },
-//   {
-//     price: 300,
-//   },
-// ];
-
-// const result = arr.reduce((sum, item) => {
-//   return sum + item.price;
-// }, 0);
-
-// let sum = 0;
-
-// const result = arr.map((item) => sum += item.price);
-
-// console.log(sum);
+;
